@@ -1,5 +1,14 @@
 # gcnq: an alias
 
-```sh
+
+
+### install 
+```bash
+cargo install gcnq
+```
+
+### usage
+```bash
 alias gcnq="git commit -m $@"
 ```
+
