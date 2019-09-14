@@ -1,11 +1,12 @@
 [package]
-name = "gcnq"
+name = "nq"
 description = "gcq ab cd ... = git commit -m 'ab cd ...'"
 version = "0.0.3"
 authors = ["chaixb <1481569358@qq.com>"]
 edition = "2018"
 license = "MIT"
 repository = "https://github.com/AliasT/nq"
+
 [lib]
 name = "nq"
 path = "src/lib.rs"
