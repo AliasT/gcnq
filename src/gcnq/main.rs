@@ -10,4 +10,7 @@ fn main() {
     .unwrap();
 
   child.wait_with_output().unwrap();
+
+  let child = Command::new("git").arg("push").spawn().unwrap();
+  child.wait_with_output().unwrap();
 }
