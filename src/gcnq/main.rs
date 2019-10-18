@@ -2,15 +2,27 @@ use std::process::Command;
 
 /// git commit no quotes
 fn main() {
-  let child = Command::new("git")
+  Command::new("git")
     .arg("commit")
     .arg("-m")
     .arg(nq::get_message())
     .spawn()
+    .unwrap()
+    .wait_with_output()
     .unwrap();
 
-  child.wait_with_output().unwrap();
+  Command::new("git")
+    .arg("pull")
+    .arg("--rebase")
+    .spawn()
+    .unwrap()
+    .wait_with_output()
+    .unwrap();
 
-  let child = Command::new("git").arg("push").spawn().unwrap();
-  child.wait_with_output().unwrap();
+  Command::new("git")
+    .arg("push")
+    .spawn()
+    .unwrap()
+    .wait_with_output()
+    .unwrap();
 }
